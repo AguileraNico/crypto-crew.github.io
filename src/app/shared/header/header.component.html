@@ -1,0 +1,12 @@
+<p>
+  <mat-toolbar color="primary">
+    <span>Crypto Crew</span>
+    <span class="spacer"></span>
+    <button *ngIf="!isLogged" mat-stroked-button aria-label="Login Button" (click)="login()">
+      Start Investing
+    </button>
+    <button mat-icon-button *ngIf="isLogged" color="primary" aria-label="Example icon button with a menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+</p>

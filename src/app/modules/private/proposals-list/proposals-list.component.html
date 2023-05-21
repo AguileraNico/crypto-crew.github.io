@@ -1,0 +1,17 @@
+<section class="banner">
+  <div>
+    <h4>Here you will find all our new, active and finished projects.</h4>
+  </div>
+</section>
+<section class="cards">
+    <mat-card *ngFor="let proposal of proposals">
+      <mat-card-header>
+        <mat-card-title>{{proposal.name}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="../../../assets/miami.webp" alt="Photo of a Shiba Inu">
+      <mat-card-content>{{proposal.description}}</mat-card-content>
+      <mat-card-actions>
+        <button mat-button [routerLink]="'../' + proposal.id">See Details</button>
+      </mat-card-actions>
+    </mat-card>
+</section>

@@ -1,0 +1,36 @@
+.banner {
+  flex-grow: 1;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-left: 8rem;
+  padding-right: 8rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: -12px;
+
+  .us {
+    width: 11vw;
+    text-align: center;
+  }
+
+  .usDescription {
+    width: 40vw;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+  .banner {
+    padding: 2rem 0;
+  }
+}
+
+/* Tablet */
+@media (min-width: 701px) and (max-width: 900px) {
+  .banner {
+    padding: 2rem 0;
+  }
+}

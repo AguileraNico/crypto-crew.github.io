@@ -1,0 +1,36 @@
+<ng-container *ngIf="proposal">
+  <button mat-icon-button class="back-button" (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <section class="principal">
+    <div class="image-div">
+      <img mat-card-image src="../../../assets/miami.webp" alt="Photo of a Shiba Inu">
+    </div>
+    <div class="details-div">
+      <div>
+        <h1>{{proposal.name}}</h1>
+        <p>{{proposal.description}}</p>
+      </div>
+      <div class="contribute">
+        <form>
+          <mat-form-field appearance="outline">
+            <mat-label>Contribute with Ether</mat-label>
+            <input matInput placeholder="Eth" [formControl]="form" type="number">
+            <mat-icon matSuffix (click)="clearInput()">close</mat-icon>
+          </mat-form-field>
+        </form>
+        <button mat-raised-button color="primary" (click)="applyContribution()">Contribute</button>
+      </div>
+    </div>
+  </section>
+  <section class="contributions">
+    <div>
+      <h2>Amount Required</h2>
+      <p>{{proposal.value}} ETH</p>
+    </div>
+    <div>
+      <h2>Amount Invested</h2>
+      <p>{{proposal.received}} ETH</p>
+    </div>
+  </section>
+</ng-container>

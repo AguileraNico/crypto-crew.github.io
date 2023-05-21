@@ -1,0 +1,25 @@
+.banner {
+  margin-top: -12px;
+  div {
+    display: flex;
+    justify-content: center;
+    background-color: grey;
+    padding: 2rem;
+    h4 {
+      margin: 0;
+    }
+  }
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  mat-card {
+    margin: 3rem 3rem;
+    img {
+      width: 18rem;
+      margin: 1rem 0;
+    }
+  }
+}
