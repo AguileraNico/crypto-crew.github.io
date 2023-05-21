@@ -14,10 +14,13 @@ export class HeaderComponent {
   constructor(private web3: Web3Service, private router: Router) {}
 
   login() {
-    this.web3.connect().subscribe((el) => {
-      console.log(el)
+    this.web3.connect().subscribe(() => {
       this.router.navigate(['/landing'])
     })
+  }
+
+  goHome() {
+    this.router.navigate(['/']);
   }
 
 }

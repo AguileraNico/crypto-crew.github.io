@@ -1,6 +1,6 @@
 <p>
   <mat-toolbar color="primary">
-    <span>Crypto Crew</span>
+    <span (click)="goHome()">Crypto Crew</span>
     <span class="spacer"></span>
     <button *ngIf="!isLogged" mat-stroked-button aria-label="Login Button" (click)="login()">
       Start Investing
