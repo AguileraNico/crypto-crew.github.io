@@ -1,40 +1,40 @@
 <mat-stepper [linear]="true" [animationDuration]="'1500'">
     <mat-step>
-        <form>
+        <form class="vertical-step" [formGroup]="proposalDescription">
         <ng-template matStepLabel>Proposal Description</ng-template>
-          <mat-form-field appearance="outline">
-            <mat-label>Proposal Name</mat-label>
-            <input matInput placeholder="Name" />
-            <mat-icon matSuffix>close</mat-icon>
-          </mat-form-field>
-          <mat-form-field appearance="outline">
-            <mat-label>Short description</mat-label>
-            <input matInput placeholder="Description" />
-            <mat-icon matSuffix>close</mat-icon>
-          </mat-form-field>
-          <mat-form-field appearance="outline">
+            <mat-form-field appearance="outline" floatLabel="always" class="short-field">
+              <mat-label>Proposal Name</mat-label>
+              <input matInput placeholder="Name" formControlName="name"/>
+              <mat-icon matSuffix>close</mat-icon>
+            </mat-form-field>
+            <mat-form-field appearance="outline" floatLabel="always">
+              <mat-label>Short description</mat-label>
+              <input matInput placeholder="Description" formControlName="shortDescription" type="text"/>
+              <mat-icon matSuffix>close</mat-icon>
+            </mat-form-field>
+          <mat-form-field appearance="outline" floatLabel="always">
             <mat-label>Long Description</mat-label>
-            <textarea matInput placeholder="Proposal Details"></textarea>
+            <textarea matInput placeholder="Proposal Details" formControlName="longDescription"></textarea>
           </mat-form-field>
         </form>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperNext class="action-buttons" [disabled]="proposalDescription.invalid">Next</button>
     </mat-step>
     <mat-step>
-        <form>
+        <form class="vertical-step" [formGroup]="proposalDetails">
         <ng-template matStepLabel>Proposal Details</ng-template>
-          <mat-form-field appearance="outline">
+          <mat-form-field appearance="outline" floatLabel="always" class="short-field">
             <mat-label>Contributions needed</mat-label>
-            <input matInput placeholder="Amount" type="number" />
+            <input matInput placeholder="Amount" type="number" formControlName="amountNeeded"/>
             <mat-icon matSuffix>close</mat-icon>
           </mat-form-field>
-          <mat-form-field appearance="outline">
+          <mat-form-field appearance="outline" floatLabel="always" class="short-field">
             <mat-label>Estimated Revenue</mat-label>
-            <input matInput placeholder="Revenue" />
+            <input matInput placeholder="Revenue" formControlName="estimatedRevenue"/>
             <mat-icon matSuffix>close</mat-icon>
           </mat-form-field>
-          <mat-form-field appearance="outline">
+          <mat-form-field appearance="outline" floatLabel="always" class="short-field">
             <mat-label>Proposal Deadline</mat-label>
-            <input matInput [matDatepicker]="picker" />
+            <input matInput [matDatepicker]="picker" formControlName="deadline"/>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
@@ -43,21 +43,21 @@
         <button mat-button matStepperNext>Next</button>
     </mat-step>
     <mat-step>
-        <form>
+        <form class="vertical-step" [formGroup]="proposalLocation">
         <ng-template matStepLabel>Proposal Location</ng-template>
-          <mat-form-field appearance="outline">
+          <mat-form-field appearance="outline" floatLabel="always" class="short-field">
             <mat-label>Country</mat-label>
-            <input matInput placeholder="Country" />
+            <input matInput placeholder="Country" formControlName="country"/>
             <mat-icon matSuffix>close</mat-icon>
           </mat-form-field>
-          <mat-form-field appearance="outline">
+          <mat-form-field appearance="outline" floatLabel="always" class="short-field">
             <mat-label>State</mat-label>
-            <input matInput placeholder="State" />
+            <input matInput placeholder="State" formControlName="state"/>
             <mat-icon matSuffix>close</mat-icon>
           </mat-form-field>
-          <mat-form-field appearance="outline">
+          <mat-form-field appearance="outline" floatLabel="always" class="short-field">
             <mat-label>City</mat-label>
-            <input matInput placeholder="City" />
+            <input matInput placeholder="City" formControlName="city"/>
             <mat-icon matSuffix>close</mat-icon>
           </mat-form-field>
         </form>
@@ -66,17 +66,21 @@
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Upload Documentation</ng-template>
-      <button mat-raised-button color="primary">Cover Image</button>
-      <button mat-raised-button color="primary">Proposal Document</button>
-      <button mat-raised-button color="primary">More Proposal Images</button>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button matStepperNext>Next</button>
+      <div class="vertical-step">
+          <button mat-raised-button color="primary" class="short-field">Cover Image</button>
+          <button mat-raised-button color="primary" class="short-field">Proposal Document</button>
+          <button mat-raised-button color="primary" class="short-field">More Proposal Images</button>
+          <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+          </div>
+      </div>
     </mat-step>
     <mat-step>
         <ng-template matStepLabel>Done</ng-template>
       <div>
         <button mat-button matStepperPrevious>Back</button>
-        <button mat-button>Reset</button>
+        <button mat-button (click)="submitProposal()">Submit Proposal</button>
       </div>
     </mat-step>
 </mat-stepper>

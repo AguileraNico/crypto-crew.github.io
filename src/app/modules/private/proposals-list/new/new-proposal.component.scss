@@ -1,0 +1,12 @@
+:host {
+    .vertical-step {
+        display: flex;
+        flex-direction: column;
+        .short-field {
+            width: fit-content;
+        }
+    }
+    .action-buttons {
+        margin-left: auto;
+    }
+}
