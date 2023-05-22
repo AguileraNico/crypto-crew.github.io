@@ -13,6 +13,7 @@ import { ProposalsListComponent } from './modules/private/proposals-list/proposa
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './modules/private/proposals-list/list/list.component';
 import { NewProposalComponent } from './modules/private/proposals-list/new/new-proposal.component';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -31,8 +32,11 @@ import { NewProposalComponent } from './modules/private/proposals-list/new/new-p
     SharedModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskDirective,
+    NgxMaskPipe
   ],
+  providers: [provideNgxMask()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
