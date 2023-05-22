@@ -1,7 +1,7 @@
-<mat-stepper [linear]="true" [animationDuration]="'1500'">
-    <mat-step>
+<!-- <mat-stepper [linear]="true" [animationDuration]="'1500'">
+    <mat-step> -->
         <form>
-        <ng-template matStepLabel>Proposal Description</ng-template>
+        <!-- <ng-template matStepLabel>Proposal Description</ng-template> -->
           <mat-form-field appearance="outline">
             <mat-label>Proposal Name</mat-label>
             <input matInput placeholder="Name" />
@@ -16,12 +16,12 @@
             <mat-label>Long Description</mat-label>
             <textarea matInput placeholder="Proposal Details"></textarea>
           </mat-form-field>
-        </form>
+        <!-- </form>
         <button mat-button matStepperNext>Next</button>
     </mat-step>
     <mat-step>
         <form>
-        <ng-template matStepLabel>Proposal Details</ng-template>
+        <ng-template matStepLabel>Proposal Details</ng-template> -->
           <mat-form-field appearance="outline">
             <mat-label>Contributions needed</mat-label>
             <input matInput placeholder="Amount" type="number" />
@@ -38,13 +38,13 @@
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
-        </form>
+        <!-- </form>
         <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
     </mat-step>
     <mat-step>
         <form>
-        <ng-template matStepLabel>Proposal Location</ng-template>
+        <ng-template matStepLabel>Proposal Location</ng-template> -->
           <mat-form-field appearance="outline">
             <mat-label>Country</mat-label>
             <input matInput placeholder="Country" />
@@ -61,17 +61,17 @@
             <mat-icon matSuffix>close</mat-icon>
           </mat-form-field>
         </form>
-        <button mat-button matStepperPrevious>Back</button>
+        <!-- <button mat-button matStepperPrevious>Back</button>
         <button mat-button matStepperNext>Next</button>
     </mat-step>
     <mat-step>
-      <ng-template matStepLabel>Upload Documentation</ng-template>
+      <ng-template matStepLabel>Upload Documentation</ng-template> -->
       <button mat-raised-button color="primary">Cover Image</button>
       <button mat-raised-button color="primary">Proposal Document</button>
       <button mat-raised-button color="primary">More Proposal Images</button>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button matStepperNext>Next</button>
-    </mat-step>
+      <!-- <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button> -->
+    <!-- </mat-step>
     <mat-step>
         <ng-template matStepLabel>Done</ng-template>
       <div>
@@ -79,4 +79,4 @@
         <button mat-button>Reset</button>
       </div>
     </mat-step>
-</mat-stepper>
+</mat-stepper> -->
