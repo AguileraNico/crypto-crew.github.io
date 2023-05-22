@@ -11,6 +11,8 @@ import { LandingComponent } from './modules/private/landing.component';
 import { ProposalDetailsComponent } from './modules/private/proposal-details/proposal-details.component';
 import { ProposalsListComponent } from './modules/private/proposals-list/proposals-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListComponent } from './modules/private/proposals-list/list/list.component';
+import { NewProposalComponent } from './modules/private/proposals-list/new/new-proposal.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     LandingComponent,
     ProposalDetailsComponent,
     ProposalsListComponent,
+    ListComponent,
+    NewProposalComponent,
   ],
   imports: [
     BrowserAnimationsModule,

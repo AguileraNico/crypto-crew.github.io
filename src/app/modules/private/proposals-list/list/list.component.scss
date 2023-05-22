@@ -1,0 +1,13 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    mat-card {
+      margin: 3rem 3rem;
+      img {
+        width: 18rem;
+        margin: 1rem 0;
+      }
+    }
+  }
+  

@@ -3,15 +3,19 @@
     <h4>Here you will find all our new, active and finished projects.</h4>
   </div>
 </section>
-<section class="cards">
-    <mat-card *ngFor="let proposal of proposals">
-      <mat-card-header>
-        <mat-card-title>{{proposal.name}}</mat-card-title>
-      </mat-card-header>
-      <img mat-card-image src="../../../assets/miami.webp" alt="Photo of a Shiba Inu">
-      <mat-card-content>{{proposal.description}}</mat-card-content>
-      <mat-card-actions>
-        <button mat-button [routerLink]="'../' + proposal.id">See Details</button>
-      </mat-card-actions>
-    </mat-card>
-</section>
+<ng-container *ngIf="isBuilder | async; else NoTabPanel">
+  <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+    <a mat-tab-link [routerLink]="'list'">
+   Proposal List
+  </a>
+  <a mat-tab-link [routerLink]="'new'">
+  New Proposal
+  </a>
+  </nav>
+  <mat-tab-nav-panel #tabPanel>
+    <router-outlet></router-outlet>
+  </mat-tab-nav-panel>
+</ng-container>
+<ng-template #NoTabPanel>
+  <router-outlet></router-outlet>
+</ng-template>

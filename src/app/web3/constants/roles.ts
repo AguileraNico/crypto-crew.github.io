@@ -1,0 +1,3 @@
+export const ROLES = {
+    BUILDER: '0x108e9970bf0b59c2d2c85b4c1102be0833ce2f80d7a6e37034d625e36d761eeb'
+}

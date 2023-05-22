@@ -6,6 +6,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatTabsModule} from '@angular/material/tabs';
 
 const modules = [
   MatToolbarModule,
@@ -15,6 +16,7 @@ const modules = [
   MatGridListModule,
   MatFormFieldModule,
   MatInputModule,
+  MatTabsModule,
 ]
 
 @NgModule({
