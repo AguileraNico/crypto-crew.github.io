@@ -7,6 +7,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from "@angular/material/core";
+import {MatStepperModule} from '@angular/material/stepper';
 
 const modules = [
   MatToolbarModule,
@@ -17,6 +20,9 @@ const modules = [
   MatFormFieldModule,
   MatInputModule,
   MatTabsModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatStepperModule,
 ]
 
 @NgModule({
