@@ -31,13 +31,15 @@
         ></textarea>
       </mat-form-field>
     </form>
-    <button mat-button matStepperNext class="action-buttons">Next</button>
+    <div>
+      <button mat-button matStepperNext class="action-buttons">Next</button>
+    </div>
   </mat-step>
   <mat-step
     [stepControl]="proposalDetails"
     errorMessage="All fields are required."
   >
-    <form class="vertical-step" [formGroup]="proposalDetails">
+    <form class="horizontal-step" [formGroup]="proposalDetails">
       <ng-template matStepLabel>Proposal Details</ng-template>
       <mat-form-field
         appearance="outline"
@@ -81,14 +83,16 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </form>
-    <button mat-button matStepperPrevious>Back</button>
-    <button mat-button matStepperNext>Next</button>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
   </mat-step>
   <mat-step
     [stepControl]="proposalLocation"
     errorMessage="All fields are required."
   >
-    <form class="vertical-step" [formGroup]="proposalLocation">
+    <form class="horizontal-step" [formGroup]="proposalLocation">
       <ng-template matStepLabel>Proposal Location</ng-template>
       <mat-form-field
         appearance="outline"
@@ -115,8 +119,10 @@
         <input matInput placeholder="City" formControlName="city" />
       </mat-form-field>
     </form>
-    <button mat-button matStepperPrevious>Back</button>
-    <button mat-button matStepperNext>Next</button>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext>Next</button>
+    </div>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Upload Documentation</ng-template>
@@ -138,6 +144,18 @@
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Done</ng-template>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>You are about to create a new Proposal</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        Be aware that this proposal is going to be reviewed before it's approval.
+        <br>
+        We take siriusly the proposals we approve.
+        <br>
+        If we think the proposal has no foundation for success we reserve the right to publish it and will take the time to review the account for possible fraud.
+      </mat-card-content>
+    </mat-card>
     <div>
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button (click)="submitProposal()">Submit Proposal</button>

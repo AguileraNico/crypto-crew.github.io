@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './modules/private/proposals-list/list/list.component';
 import { NewProposalComponent } from './modules/private/proposals-list/new/new-proposal.component';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
     FormsModule,
     ReactiveFormsModule,
     NgxMaskDirective,
-    NgxMaskPipe
+    NgxMaskPipe,
+    HttpClientModule,
   ],
   providers: [provideNgxMask()],
   bootstrap: [AppComponent]

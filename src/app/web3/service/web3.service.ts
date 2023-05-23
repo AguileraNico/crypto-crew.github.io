@@ -26,7 +26,7 @@ export class Web3Service {
   constructor(private mapperService: Web3MappersService) {}
 
   connect(): Observable<any> {
-    const address = "0x88739Fc56b48948f5413752fE25aC312707e5B92";
+    const address = "0xd7E3bb703B39b66B846411454A3F23dE10b25613";
 
     this.provider = new ethers.providers.Web3Provider((window as any).ethereum);
 

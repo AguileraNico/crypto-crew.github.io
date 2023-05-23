@@ -2,11 +2,23 @@
     .vertical-step {
         display: flex;
         flex-direction: column;
-        .short-field {
-            width: fit-content;
-        }
+    }
+    .horizontal-step {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    .short-field {
+        width: fit-content;
     }
     .action-buttons {
         margin-left: auto;
+    }
+}
+
+mat-card {
+    margin: 0 3rem 4rem 3rem;
+    mat-card-content {
+        margin-top: 2rem;
     }
 }

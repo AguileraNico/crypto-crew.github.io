@@ -1,12 +1,13 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { IPFSService } from "src/app/web3/service/ipfs.service";
 
 @Component({
     selector: 'app-new-proposal',
     templateUrl: './new-proposal.component.html',
     styleUrls: ['./new-proposal.component.scss']
 })
-export class NewProposalComponent {
+export class NewProposalComponent implements OnInit {
 
     proposalDescription = new FormGroup({
         name: new FormControl('', [Validators.required]),
@@ -24,6 +25,12 @@ export class NewProposalComponent {
         city: new FormControl('', [Validators.required]),
     });
 
+    constructor(private ipfsService: IPFSService) {}
+
+    ngOnInit(): void {
+        // this.uploadFile()
+    }
+
     submitProposal() {
         const proposal = {
             ...this.proposalDescription.value,
@@ -31,5 +38,12 @@ export class NewProposalComponent {
             ...this.proposalLocation.value
         }
         console.log(proposal)
+    }
+
+    uploadFile() {
+        const file = new File(['asdasd'], 'test.txt', {type: 'text/plain'});
+        const formData = new FormData();
+        formData.append('file', file);
+        this.ipfsService.postFile(formData).subscribe(console.log)
     }
 }
