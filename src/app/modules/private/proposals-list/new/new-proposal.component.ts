@@ -15,7 +15,7 @@ export class NewProposalComponent implements OnInit {
         longDescription: new FormControl('', [Validators.required]),
     });
     proposalDetails = new FormGroup({
-        amountNeeded: new FormControl(null, [Validators.required]),
+        value: new FormControl(null, [Validators.required]),
         estimatedRevenue: new FormControl(null, [Validators.required]),
         deadline: new FormControl(null, [Validators.required])
     });

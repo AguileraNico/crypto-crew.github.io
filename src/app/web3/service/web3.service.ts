@@ -26,7 +26,7 @@ export class Web3Service {
   constructor(private mapperService: Web3MappersService) {}
 
   connect(): Observable<any> {
-    const address = "0xd7E3bb703B39b66B846411454A3F23dE10b25613";
+    const address = "0x01b7D00193be70946810aB6065e372C2533eb5D9";
 
     this.provider = new ethers.providers.Web3Provider((window as any).ethereum);
 
@@ -51,7 +51,7 @@ export class Web3Service {
         switchMap((amount: BigNumber) => {
           const num = amount.toNumber();
           const proposalsObservables: Observable<any>[] = [];
-          for (let index = 0; index < num || index < 10; index++) {
+          for (let index = 0; index < num && index < 10; index++) {
             proposalsObservables.push(
               from(this.crowContract["proposals"](index)).pipe(
                 map((el: any) => ({
@@ -76,7 +76,7 @@ export class Web3Service {
         switchMap((amount: BigNumber) => {
           const num = amount.toNumber();
           const proposalsObservables: Observable<any>[] = [];
-          for (let index = 0; index < num || index < 10; index++) {
+          for (let index = 0; index < num && index < 10; index++) {
             proposalsObservables.push(
               from(this.crowContract["proposals"](index)).pipe(
                 map((el: any) => ({
@@ -86,6 +86,7 @@ export class Web3Service {
               )
             );
           }
+          console.log(proposalsObservables)
           return forkJoin(proposalsObservables).pipe(
             map((data: any[]) =>
               data.map((el) => this.mapperService.mapProposals(el)).reverse()
@@ -135,5 +136,9 @@ export class Web3Service {
         )
       );
     }
+  }
+
+  newProposal(form: any) {
+
   }
 }
