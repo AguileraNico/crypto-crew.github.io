@@ -5,7 +5,7 @@ import { LandingComponent } from './modules/private/landing.component';
 import { ProposalsListComponent } from './modules/private/proposals-list/proposals-list.component';
 import { ProposalDetailsComponent } from './modules/private/proposal-details/proposal-details.component';
 import { ListComponent } from './modules/private/proposals-list/list/list.component';
-import { NewProposalComponent } from './modules/private/proposals-list/new/new-proposal.component';
+import { NewProposalComponent } from './modules/private/new-proposal/new-proposal.component';
 
 const routes: Routes = [{
   path: '',
@@ -31,10 +31,10 @@ const routes: Routes = [{
     }, {
       path: 'list',
       component: ListComponent
-    }, {
-      path: 'new',
-      component: NewProposalComponent
     }]
+  }, {
+    path: 'new-proposal',
+    component: NewProposalComponent
   }, {
     path: ':id',
     component: ProposalDetailsComponent

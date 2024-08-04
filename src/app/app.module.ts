@@ -12,7 +12,7 @@ import { ProposalDetailsComponent } from './modules/private/proposal-details/pro
 import { ProposalsListComponent } from './modules/private/proposals-list/proposals-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListComponent } from './modules/private/proposals-list/list/list.component';
-import { NewProposalComponent } from './modules/private/proposals-list/new/new-proposal.component';
+import { NewProposalComponent } from './modules/private/new-proposal/new-proposal.component';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { HttpClientModule } from '@angular/common/http';
 

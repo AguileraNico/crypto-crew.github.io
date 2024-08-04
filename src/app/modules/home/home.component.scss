@@ -1,36 +1,66 @@
 .banner {
-  flex-grow: 1;
-  background-color: gray;
+  background-color: rgb(238, 238, 238);
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  padding-left: 8rem;
-  padding-right: 8rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  justify-content: space-between;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   margin-top: -12px;
 
   .us {
-    width: 11vw;
-    text-align: center;
+    width: 100%;
+    font-size: 2rem;
   }
 
   .usDescription {
-    width: 40vw;
+    width: 60%;
+    font-size: 0.8rem;
+  }
+  img {
+    max-width: 40%;
   }
 }
 
-/* Mobile */
-@media (max-width: 700px) {
+.benefits-investor,
+.benefits-constructor {
+  background-color: unset;
+  padding: 20px;
+  margin: 20px 0;
+}
 
+.benefits-investor h2,
+.benefits-constructor h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.benefits-investor ul,
+.benefits-constructor ul {
+  list-style: none;
+  padding: 0;
+}
+
+.benefits-investor li,
+.benefits-constructor li {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
   .banner {
-    padding: 2rem 0;
+    padding: 2rem 1rem;
+    .usDescription {
+      width: 90%;
+    }
   }
 }
 
 /* Tablet */
-@media (min-width: 701px) and (max-width: 900px) {
+@media (min-width: 501px) and (max-width: 900px) {
   .banner {
-    padding: 2rem 0;
+    padding: 2rem 2rem;
   }
 }

@@ -1,10 +1,12 @@
 <section class="cards">
     <mat-card *ngFor="let proposal of proposals">
       <mat-card-header>
-        <mat-card-title>{{proposal.name}}</mat-card-title>
+        <mat-card-title>{{proposal.name}} </mat-card-title>
       </mat-card-header>
       <img mat-card-image src="../../../assets/miami.webp" alt="Photo of a Shiba Inu">
-      <mat-card-content>{{proposal.description}}</mat-card-content>
+      <mat-card-content>
+        <p>{{proposal.description}}</p>
+      </mat-card-content>
       <mat-card-actions>
         <button mat-button [routerLink]="'../../' + proposal.id">See Details</button>
       </mat-card-actions>

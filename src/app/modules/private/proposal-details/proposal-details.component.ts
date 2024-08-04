@@ -10,7 +10,12 @@ import { Web3Service } from "src/app/web3/service/web3.service";
 })
 export class ProposalDetailsComponent implements OnInit {
 
-  proposal: any;
+  proposal: any = {
+    name: 'Test Project',
+    description: 'test set se e etsetset  seesfe  et sdfgsrgggr sdfsdfs',
+    value: 3000,
+    received: 1500
+  };
   form = new FormControl();
   id: number;
 
@@ -19,7 +24,7 @@ export class ProposalDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.web3.getProposal(this.id).subscribe(data => this.proposal = data)
+    // this.web3.getProposal(this.id).subscribe(data => this.proposal = data)
   }
 
   clearInput() {

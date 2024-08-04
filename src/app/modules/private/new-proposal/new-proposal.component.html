@@ -1,3 +1,12 @@
+<section class="heading">
+  <button mat-button (click)="goBack()">
+    <mat-icon>chevron_left</mat-icon>
+    Back
+  </button>
+
+  <h2>New Proposal Information</h2>
+</section>
+
 <mat-stepper [linear]="true" [animationDuration]="'1500'">
   <mat-step
     [stepControl]="proposalDescription"

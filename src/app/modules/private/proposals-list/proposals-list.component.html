@@ -3,19 +3,12 @@
     <h4>Here you will find all our new, active and finished projects.</h4>
   </div>
 </section>
-<ng-container *ngIf="isBuilder | async; else NoTabPanel">
+<ng-container>
   <nav mat-tab-nav-bar [tabPanel]="tabPanel">
-    <a mat-tab-link [routerLink]="'list'">
-   Proposal List
-  </a>
-  <a mat-tab-link [routerLink]="'new'">
-  New Proposal
-  </a>
+    <a mat-tab-link [routerLink]="'list'" routerLinkActive="active"> Proposal List </a>
+    <a mat-tab-link [routerLink]="'my-proposals'" routerLinkActive="active"> My Proposals </a>
   </nav>
   <mat-tab-nav-panel #tabPanel>
     <router-outlet></router-outlet>
   </mat-tab-nav-panel>
 </ng-container>
-<ng-template #NoTabPanel>
-  <router-outlet></router-outlet>
-</ng-template>
